@@ -1,18 +1,24 @@
 import { Component } from 'react';
-import ContactForm from './components/ContactForm/ContactForm';
-import ContactsList from './components/ContactsList/ContactsList';
-import Filter from './components/Filter/Filter';
+import { Switch, Route } from 'react-router-dom';
 import Container from './components/Container/Container';
+import Contacts from './components/Contacts/Contacts';
+import AppBar from './components/AppBar';
+import HomeView from './views/HomeView';
+import RegisterView from './views/RegisterView';
+import LoginView from './views/LoginView';
 
 export default class App extends Component {
   render() {
     return (
       <Container>
-        <h2>Form Contact</h2>
-        <ContactForm />
-        <h2>Contacts List</h2>
-        <Filter />
-        <ContactsList />
+        <AppBar />
+
+        <Switch>
+          <Route exact path="/" component={HomeView} />
+          <Route path="/register" component={RegisterView} />
+          <Route path="/login" component={LoginView} />
+          <Route path="/todos" component={Contacts} />
+        </Switch>
       </Container>
     );
   }
