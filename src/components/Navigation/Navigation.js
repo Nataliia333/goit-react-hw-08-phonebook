@@ -8,7 +8,7 @@ const Navigation = () => (
       to="/"
       exact
       className={styles.Link}
-      activeclassName={styles.ActiveLink}
+      activeclassname={styles.ActiveLink}
     >
       Главная
     </NavLink>
@@ -17,7 +17,7 @@ const Navigation = () => (
       to="/contacts"
       exact
       className={styles.link}
-      activeclassName={styles.activeLink}
+      activeclassname={styles.activeLink}
     >
       Phonebook
     </NavLink>
