@@ -4,7 +4,12 @@ import styles from './Navigation.module.css';
 
 const Navigation = () => (
   <nav>
-    <NavLink to="/" exact style={styles.Link} activeStyle={styles.ActiveLink}>
+    <NavLink
+      to="/"
+      exact
+      className={styles.Link}
+      activeclassName={styles.ActiveLink}
+    >
       Главная
     </NavLink>
 

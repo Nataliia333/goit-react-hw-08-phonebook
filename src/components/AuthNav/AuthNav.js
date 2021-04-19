@@ -16,7 +16,7 @@ const AuthNav = () => (
     <NavLink
       to="/login"
       exact
-      className={styles.link}
+      className={styles.Link}
       activeclassName={styles.ActiveLink}
     >
       Логин

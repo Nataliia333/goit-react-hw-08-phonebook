@@ -1,10 +1,10 @@
 .Link {
-  display: 'inline-block';
-  textdecoration: 'none';
-  padding: 12;
-  fontweight: 700;
-  color: '#2A363B';
+  display: inline-block;
+  text-decoration: none;
+  padding: 12px;
+  font-weight: 700;
+  color: #2a363b;
 }
 .ActiveLink {
-  color: '#E84A5F';
+  color: #e84a5f;
 }
