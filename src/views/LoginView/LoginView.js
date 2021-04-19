@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { authOperations } from '../../redux/auth';
 import styles from './LoginView.module.css';
 
 class LoginView extends Component {
@@ -58,4 +60,8 @@ class LoginView extends Component {
   }
 }
 
-export default LoginView;
+const mapDispatchToProps = {
+  onLogin: authOperations.logIn,
+};
+
+export default connect(null, mapDispatchToProps)(LoginView);

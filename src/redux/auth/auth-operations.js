@@ -26,7 +26,7 @@ const register = credentials => async dispatch => {
 
     dispatch(authActions.registerSuccess(response.data));
   } catch (error) {
-    dispatch(authActions.registerError(error));
+    dispatch(authActions.registerError(error.message));
   }
 };
 
@@ -37,7 +37,17 @@ const register = credentials => async dispatch => {
  *
  * После успешного логина добавляем токен в HTTP-заголовок
  */
-const logIn = credentials => dispatch => {};
+const logIn = credentials => async dispatch => {
+  dispatch(authActions.loginRequest());
+
+  try {
+    const response = await axios.post('/users/login', credentials);
+
+    dispatch(authActions.loginSuccess(response.data));
+  } catch (error) {
+    dispatch(authActions.loginError(error.message));
+  }
+};
 
 /*
  * POST @ /users/logout
