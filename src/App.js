@@ -6,8 +6,14 @@ import AppBar from './components/AppBar/AppBar';
 import HomeView from './views/HomeView/HomeView';
 import RegisterView from './views/RegisterView/RegisterView';
 import LoginView from './views/LoginView/LoginView';
+import { authOperations } from './redux/auth';
+import { connect } from 'react-redux';
 
-export default class App extends Component {
+class App extends Component {
+  componentDidMount() {
+    this.props.onGetCurretnUser();
+  }
+
   render() {
     return (
       <Container>
@@ -23,3 +29,9 @@ export default class App extends Component {
     );
   }
 }
+
+const mapDispatchToProps = {
+  onGetCurretnUser: authOperations.getCurrentUser,
+};
+
+export default connect(null, mapDispatchToProps)(App);
