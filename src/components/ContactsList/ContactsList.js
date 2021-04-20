@@ -12,6 +12,7 @@ const ContactsList = ({
   fetchContacts,
 }) => {
   useEffect(() => fetchContacts(), []);
+
   const handlerDelete = event => {
     onDelete(event.currentTarget.id);
   };

@@ -17,7 +17,7 @@ export default class App extends Component {
           <Route exact path="/" component={HomeView} />
           <Route path="/register" component={RegisterView} />
           <Route path="/login" component={LoginView} />
-          <Route path="/contacs" component={Contacts} />
+          <Route path="/contacts" component={Contacts} />
         </Switch>
       </Container>
     );
